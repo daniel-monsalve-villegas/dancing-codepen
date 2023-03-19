@@ -1,0 +1,188 @@
+@import url('https:fonts.googleapis.com/css?family=Montserrat:600|Lato');
+
+html {
+  background: linear-gradient(100deg, #444, #777);
+  height: 100vh;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.codepen {
+  position: absolute;
+  left: calc(50vw - 300px);
+  bottom: 32px;
+  height: 472px;
+}
+
+.codepen__body {
+  width: 600px;
+  margin: 2em auto;
+  box-shadow: 0 0 15px #333;
+  animation: dancing .75s ease 2s infinite;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  height: 40px;
+  background: #000;
+  padding: 0 15px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top > div {
+  display: flex;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+  fill: #FFF;
+}
+
+.top .title {
+  color: #fff;
+  padding-left: 15px;
+  font-family: Lato;
+  outline: 0;
+  position: relative;
+}
+
+.top .title::after {
+  position: absolute;
+  right: -20px;
+  top: 1px;
+  content: '✐';
+  color: #FFF;
+  display: block;
+  transform: scale(-1);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+.buttons .button {
+  background: #343436;
+  width: 70px;
+  height: 23px;
+  margin: 0 5px;
+  border-radius: 4px;
+  border-top: 2px solid #343436;
+}
+
+.button:nth-child(1) {
+  width: 50px;
+  border-top: 2px solid #FEDD31;
+}
+
+:button:nth-child(2) {
+  width: 60px;
+}
+
+.buttons .avatar {
+  width: 30px;
+  height: 25px;
+  border-radius: 3px;
+  margin: 0 5px;
+  background: #FFF url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/154065/profile/profile-80.jpg);
+  background-size: cover;
+}
+
+.mid {
+  width: 100%;
+  background: #343436;
+  min-height: 165px;
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.mid .tab {
+  width: 100%;
+  height: 125px;
+  margin: 10px;
+  background: #1E1F21;
+  border-top: 20px solid #111;
+}
+
+.mid::before,
+.mid::after {
+  content: ' ';
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(20px at 13px 10px, #FFF 20%, #000 30%);
+
+  position: absolute;
+  right: 200px;
+  top: 100px;
+}
+
+.mid::before {
+  left: 200px;
+  right: none;
+  transform: scale(-1, 1);
+}
+
+.preview {
+  background: #FFF;
+  min-height: 150px;
+  position: relative;
+}
+
+.preview::after {
+  content: ' ';
+  display: block;
+  width: 50px;
+  height: 30px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: #000;
+
+  position: absolute;
+  left: calc(50% - 25px);
+  bottom: 105px;
+}
+
+.bottom {
+  height: 15px;
+  background: #343436;
+}
+
+.feet {
+  width: 200px;
+  position: relative;
+  left: 205px;
+  top: -90px;
+  z-index: -1;
+}
+
+.feet path {
+  fill: none;
+  stroke: #111;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+@keyframes dancing {
+  25% {
+    transform: translateY(20px) skew(-2deg);
+  }
+  0%, 50%, 100% {
+    transform: translateY(0) skew(0);
+  }
+  75% {
+    transform: translateY(20px) skew(2deg);
+  }
+}
